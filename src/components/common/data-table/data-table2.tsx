@@ -1,0 +1,212 @@
+import * as React from "react";
+import {
+  type ColumnDef,
+  type ColumnFiltersState,
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  type SortingState,
+  useReactTable,
+  type VisibilityState,
+} from "@tanstack/react-table";
+import { Button } from "@/components/ui/button";
+import { Command, CommandInput } from "@/components/ui/command";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
+import { useNavigate } from "react-router-dom";
+
+import { ChevronDown, Info, SlidersHorizontal } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
+import { Separator } from "@/components/ui/separator";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { ComboboxDemo } from "@/components/ui/ComboboxDemo";
+import {
+  IconCircleDashedCheck,
+  IconCircleDashedX,
+  IconPlus,
+} from "@tabler/icons-react";
+import { FilterDrawer } from "@/components/filter-drawer";
+
+type DataTableProps<TData, TValue> = {
+  data: TData[];
+  columns: ColumnDef<TData, TValue>[];
+  onAdd?: () => void;
+  addButtonLabel?: string;
+  addButtonPath?: string;
+  addButtonType?: "page" | "drawer" | "drawertest";
+  open?: boolean;
+  setOpen?: (value: boolean) => void;
+};
+
+export function DataTable2<TData, TValue>({
+  data,
+  columns,
+  onAdd,
+  addButtonPath,
+  addButtonLabel,
+  addButtonType,
+  setOpen,
+}: DataTableProps<TData, TValue>) {
+  const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    []
+  );
+  const [columnVisibility, setColumnVisibility] =
+    React.useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = React.useState({});
+  const table = useReactTable({
+    data,
+    columns,
+    onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
+    onRowSelectionChange: setRowSelection,
+    state: { sorting, columnFilters, columnVisibility, rowSelection },
+  });
+
+  const navigate = useNavigate();
+
+  return (
+    <div className="w-full">
+      <div className="flex items-center gap-2 justify-between py-4">
+        <FilterDrawer />
+
+        <Command className="rounded-lg border shadow-md w-sm">
+          <CommandInput
+            placeholder="Search..."
+            value={(table.getState().globalFilter as string) ?? ""}
+            onValueChange={(value) => table.setGlobalFilter(value)}
+          />
+        </Command>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="ml-auto">
+              Columns <ChevronDown />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {table
+              .getAllColumns()
+              .filter((column) => column.getCanHide())
+              .map((column) => {
+                return (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    className="capitalize"
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                );
+              })}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {(onAdd || addButtonPath) && (
+          <Button
+            size="sm"
+            onClick={() => {
+              if (addButtonType === "drawer") {
+                setOpen?.(true);
+                if (onAdd) onAdd();
+              } else if (addButtonType === "page" && addButtonPath) {
+                navigate(addButtonPath);
+              } else if (addButtonType === "drawertest") {
+                setOpen?.(true);
+                if (onAdd) onAdd();
+              }
+            }}
+          >
+            {addButtonLabel ?? "+ Add"}
+          </Button>
+        )}
+      </div>
+
+      <div className="w-full">
+        <div className="overflow-hidden rounded-md border">
+          <div className="overflow-auto max-h-[600px]">
+            <Table>
+              <TableHeader>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => (
+                      <TableHead
+                        key={header.id}
+                        className="whitespace-nowrap px-4"
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableHeader>
+              <TableBody>
+                {table.getRowModel().rows?.length ? (
+                  table.getRowModel().rows.map((row) => (
+                    <TableRow
+                      key={row.id}
+                      data-state={row.getIsSelected() && "selected"}
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={columns.length} className="h-64">
+                      <div className="flex flex-col items-center justify-center h-full text-muted-foreground space-y-2">
+                        <Info className="h-8 w-8" />
+                        <p>No data available</p>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "formName": "Employee Onboarding",
+    "description": "Form for collecting new hire details and documents.",
+    "lastUpdate": "2025-08-20",
+    "created": "2025-01-15",
+    "status": "Active",
+    "role": "admin"
+  },
+  {
+    "id": "2",
+    "formName": "Expense Reimbursement",
+    "description": "Submit claims for travel and office-related expenses.",
+    "lastUpdate": "2025-08-18",
+    "created": "2024-12-10",
+    "status": "Active",
+    "role": "super-admin"
+  },
+  {
+    "id": "3",
+    "formName": "Leave Request",
+    "description": "Request approval for vacation, sick leave, or other absences.",
+    "lastUpdate": "2025-08-15",
+    "created": "2024-11-22",
+    "status": "Inactive",
+    "role": "admin"
+  },
+  {
+    "id": "4",
+    "formName": "IT Access Request",
+    "description": "Grant or revoke access to company systems and tools.",
+    "lastUpdate": "2025-08-12",
+    "created": "2024-10-05",
+    "status": "Active",
+    "role": "super-admin"
+  },
+  {
+    "id": "5",
+    "formName": "Vendor Registration",
+    "description": "Register new vendors and collect compliance documents.",
+    "lastUpdate": "2025-08-10",
+    "created": "2024-09-30",
+    "status": "Active",
+    "role": "admin"
+  },
+  {
+    "id": "6",
+    "formName": "Customer Feedback",
+    "description": "Collect feedback from customers about products and services.",
+    "lastUpdate": "2025-08-08",
+    "created": "2024-09-15",
+    "status": "Inactive",
+    "role": "super-admin"
+  },
+  {
+    "id": "7",
+    "formName": "Performance Review",
+    "description": "Annual performance review and feedback submission.",
+    "lastUpdate": "2025-08-05",
+    "created": "2024-08-20",
+    "status": "Active",
+    "role": "admin"
+  },
+  {
+    "id": "8",
+    "formName": "Travel Authorization",
+    "description": "Request approval for business trips and accommodations.",
+    "lastUpdate": "2025-08-02",
+    "created": "2024-08-01",
+    "status": "Active",
+    "role": "super-admin"
+  },
+  {
+    "id": "9",
+    "formName": "Incident Report",
+    "description": "Log workplace incidents, safety hazards, or policy violations.",
+    "lastUpdate": "2025-07-28",
+    "created": "2024-07-10",
+    "status": "Inactive",
+    "role": "admin"
+  },
+  {
+    "id": "10",
+    "formName": "Asset Handover",
+    "description": "Track assignment and return of company assets.",
+    "lastUpdate": "2025-07-25",
+    "created": "2024-06-25",
+    "status": "Active",
+    "role": "super-admin"
+  }
+]

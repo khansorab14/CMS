@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Organisation Logo",
+    "description": "This logo will appear on the toolbar for all users.",
+    "head": "Branding",
+    "status": "Active"
+  },
+  {
+    "name": "User Profile Picture",
+    "description": "Profile picture shown to all members in the workspace.",
+    "head": "User Settings",
+    "status": "inactive"
+  },
+  {
+    "name": "Background Banner",
+    "description": "Displayed on the dashboard header background.",
+    "head": "Theme Settings",
+    "status": "Active"
+  },
+  {
+    "name": "Login Page Illustration",
+    "description": "Main illustration shown on the login page.",
+    "head": "Authentication",
+    "status": "Active"
+  },
+  {
+    "name": "Favicon",
+    "description": "Small icon displayed on the browser tab.",
+    "head": "Branding",
+    "status": "Active"
+  },
+  {
+    "name": "Notification Icon",
+    "description": "Icon used for notification alerts.",
+    "head": "UI Elements",
+    "status": "inactive"
+  },
+  {
+    "name": "Sidebar Background",
+    "description": "Custom background image for the sidebar.",
+    "head": "Theme Settings",
+    "status": "Active"
+  },
+  {
+    "name": "Welcome Banner",
+    "description": "Displayed to new users after account creation.",
+    "head": "Onboarding",
+    "status": "Active"
+  },
+  {
+    "name": "Report Template",
+    "description": "Default template used for exported reports.",
+    "head": "Reports",
+    "status": "inactive"
+  },
+  {
+    "name": "Chat Background",
+    "description": "Wallpaper background for chat messages.",
+    "head": "Messaging",
+    "status": "Active"
+  },
+  {
+    "name": "Default Avatar",
+    "description": "Fallback avatar shown if a user does not upload one.",
+    "head": "User Settings",
+    "status": "Active"
+  },
+  {
+    "name": "Loading Screen Illustration",
+    "description": "Displayed when the system is processing.",
+    "head": "UI Elements",
+    "status": "inactive"
+  },
+  {
+    "name": "Error Page Illustration",
+    "description": "Image shown on error (404/500) pages.",
+    "head": "Error Handling",
+    "status": "Active"
+  },
+  {
+    "name": "Dashboard Graph Icon",
+    "description": "Icon representing dashboard analytics.",
+    "head": "Analytics",
+    "status": "Active"
+  },
+  {
+    "name": "App Store Banner",
+    "description": "Promotional banner for app store listings.",
+    "head": "Marketing",
+    "status": "Active"
+  },
+  {
+    "name": "Team Group Photo",
+    "description": "Photo shown on About Us page.",
+    "head": "Company Info",
+    "status": "inactive"
+  },
+  {
+    "name": "Knowledge Base Icon",
+    "description": "Icon used for the help & support section.",
+    "head": "Support",
+    "status": "Active"
+  },
+  {
+    "name": "Payment Gateway Logo",
+    "description": "Displayed on the checkout/payment page.",
+    "head": "Finance",
+    "status": "Active"
+  },
+  {
+    "name": "Security Badge",
+    "description": "Badge displayed to show compliance certifications.",
+    "head": "Security",
+    "status": "inactive"
+  },
+  {
+    "name": "Feature Spotlight",
+    "description": "Highlight banner for new feature announcements.",
+    "head": "Product Updates",
+    "status": "Active"
+  }
+]

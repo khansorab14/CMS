@@ -1,0 +1,27 @@
+[
+  {
+    "productType": "Book",
+    "productDescription": "Fictional novel with hardcover",
+    "status": "Active"
+  },
+  {
+    "productType": "Electronics",
+    "productDescription": "Smartphone with 128GB storage",
+    "status": "Inactive"
+  },
+  {
+    "productType": "Clothing",
+    "productDescription": "Men’s cotton T-shirt",
+    "status": "Active"
+  },
+  {
+    "productType": "Furniture",
+    "productDescription": "Wooden dining table set",
+    "status": "Active"
+  },
+  {
+    "productType": "Toys",
+    "productDescription": "Remote-controlled car",
+    "status": "Inactive"
+  }
+]
