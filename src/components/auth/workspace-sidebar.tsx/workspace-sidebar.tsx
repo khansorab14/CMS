@@ -1,36 +1,35 @@
 import * as React from "react";
 import {
-  IconBell,
   IconCamera,
-  IconChartHistogram,
   IconFileAi,
   IconFileDescription,
-  IconHelp,
-  IconInnerShadowTop,
-  IconSearch,
-  IconSettings,
   IconSettingsSearch,
   IconUserCircle,
   IconUsers,
   IconUsersGroup,
 } from "@tabler/icons-react";
 
-import { NavDocuments } from "@/components/nav-documents";
+import { NavDocuments } from "@/components/common/sidebar/nav-documents";
 
-import { NavUser } from "@/components/nav-user";
+import { NavUser } from "@/components/common/sidebar/nav-user";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-import { ArrowLeft, GalleryVerticalEnd } from "lucide-react";
+import {
+  ArrowLeft,
+  Briefcase,
+  FolderCheck,
+  GalleryVerticalEnd,
+  LayoutTemplate,
+  Network,
+  SquareKanban,
+} from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { Command, CommandInput } from "@/components/ui/command";
+
 import { SearchBar } from "@/components/ui/search-bar";
 
 const data = {
@@ -88,30 +87,14 @@ const data = {
       ],
     },
   ],
-  navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: IconSettings,
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: IconHelp,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: IconSearch,
-    },
-  ],
-  general: [
-    {
-      name: "Oragnization Profile",
-      url: "/workspace/organization Profile",
-      icon: IconUserCircle,
-    },
-  ],
+
+  // general: [
+  //   {
+  //     name: "Oragnization Profile",
+  //     url: "/workspace/organization Profile",
+  //     icon: IconUserCircle,
+  //   },
+  // ],
   team: [
     {
       name: "User",
@@ -161,14 +144,36 @@ const data = {
   ],
   automation: [
     {
-      name: "User",
-      url: "/user",
-      icon: IconUsers,
+      name: "Form Rules",
+      url: "/form-rules",
+      icon: FolderCheck,
     },
     {
-      name: "Role",
-      url: "/role",
-      icon: IconUserCircle,
+      name: "Entity Hierarchy",
+      url: "/entity-hierarchy",
+      icon: GalleryVerticalEnd,
+    },
+    {
+      name: "Fraud Workflow",
+      url: "/fraud-workflow",
+      icon: Network,
+    },
+    {
+      name: "Case Workflow",
+      url: "/case-workflow",
+      icon: SquareKanban,
+    },
+  ],
+  email: [
+    {
+      name: "Template",
+      url: "/template",
+      icon: LayoutTemplate,
+    },
+    {
+      name: "Logs",
+      url: "/logs",
+      icon: Briefcase,
     },
   ],
 
@@ -225,6 +230,7 @@ export function WorkspaceSidebar({
         <NavDocuments title="Customisation" items={data.customization} />
         <NavDocuments title="Modules" items={data.modules} />
         <NavDocuments title="Automation" items={data.automation} />
+        <NavDocuments title="Email" items={data.email} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

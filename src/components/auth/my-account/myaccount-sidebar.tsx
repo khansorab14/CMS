@@ -1,37 +1,20 @@
 import * as React from "react";
-import {
-  IconBell,
-  IconCamera,
-  IconChartHistogram,
-  IconFileAi,
-  IconFileDescription,
-  IconHelp,
-  IconInnerShadowTop,
-  IconSearch,
-  IconSettings,
-  IconSettingsSearch,
-  IconUserCircle,
-  IconUsers,
-  IconUsersGroup,
-} from "@tabler/icons-react";
 
-import { NavDocuments } from "@/components/nav-documents";
+import { NavDocuments } from "@/components/common/sidebar/nav-documents";
 
-import { NavUser } from "@/components/nav-user";
+import { NavUser } from "@/components/common/sidebar/nav-user";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
 import { ArrowLeft, GalleryVerticalEnd } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { Command, CommandInput } from "@/components/ui/command";
+
 import { SearchBar } from "@/components/ui/search-bar";
+import { IconUserCircle } from "@tabler/icons-react";
 
 const data = {
   user: {

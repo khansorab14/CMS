@@ -1,0 +1,69 @@
+[
+  {
+    "id": "fld-001",
+    "fieldName": "Employee Name",
+    "fieldType": "text",
+    "status": "Active",
+    "value": "John Doe"
+  },
+  {
+    "id": "fld-002",
+    "fieldName": "Employee Age",
+    "fieldType": "number",
+    "status": "Active",
+    "value": "28"
+  },
+  {
+    "id": "fld-003",
+    "fieldName": "Joining Date",
+    "fieldType": "date",
+    "status": "Active",
+    "value": "2023-10-15"
+  },
+  {
+    "id": "fld-004",
+    "fieldName": "Department",
+    "fieldType": "dropdown-single",
+    "status": "Active",
+    "options": ["HR", "Engineering", "Finance", "Marketing"],
+    "value": "Engineering"
+  },
+  {
+    "id": "fld-005",
+    "fieldName": "Skills",
+    "fieldType": "dropdown-multi",
+    "status": "Active",
+    "options": ["React", "Node.js", "SQL", "Python"],
+    "value": ["React", "SQL"]
+  },
+  {
+    "id": "fld-006",
+    "fieldName": "Address",
+    "fieldType": "text-area",
+    "status": "Inactive",
+    "value": "123 Main Street, New York, NY"
+  },
+  {
+    "id": "fld-007",
+    "fieldName": "Accept Terms & Conditions",
+    "fieldType": "checkbox-single",
+    "status": "Active",
+    "value": true
+  },
+  {
+    "id": "fld-008",
+    "fieldName": "Hobbies",
+    "fieldType": "checkbox-multi",
+    "status": "Active",
+    "options": ["Reading", "Traveling", "Gaming", "Cooking"],
+    "value": ["Reading", "Gaming"]
+  },
+  {
+    "id": "fld-009",
+    "fieldName": "Gender",
+    "fieldType": "radio",
+    "status": "Active",
+    "options": ["Male", "Female", "Other"],
+    "value": "Male"
+  }
+]

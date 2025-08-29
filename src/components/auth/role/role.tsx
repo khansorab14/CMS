@@ -1,9 +1,10 @@
-import { DataTable2 } from "@/components/common/data-table/data-table2";
+import { DataTable } from "@/components/common/data-table/data-table";
 
-import { roleColumn } from "@/components/common/data-table/role-column";
+import { roleColumn } from "@/components/common/data-table/column/role-column";
 import { CustomDrawerContent } from "@/components/ui/custom-drawer-content";
 import { Drawer } from "@/components/ui/drawer";
 import { useState } from "react";
+import { TitleWarning } from "@/components/common/tittle-warning";
 
 const data = [
   {
@@ -42,10 +43,15 @@ export default function Role() {
   return (
     <div className="flex flex-1 flex-col">
       <div className="@container/main flex flex-1 flex-col gap-2">
-        <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-          {/* <DataTable1 data={data} /> */}
+        <div className="flex flex-col gap-4  md:gap-6 ">
+          <TitleWarning
+            title={"Role"}
+            warning={
+              "The Masterlist page provides a centralized view to manage andorganize all key configuration items across modules."
+            }
+          />
           <div className="px-4 lg:px-6">
-            <DataTable2
+            <DataTable
               data={data}
               columns={roleColumn}
               addButtonType="page"

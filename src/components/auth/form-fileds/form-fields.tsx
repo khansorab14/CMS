@@ -1,4 +1,4 @@
-import { DataTable2 } from "@/components/common/data-table/data-table2";
+import { DataTable } from "@/components/common/data-table/data-table";
 
 import {
   Drawer,
@@ -16,9 +16,10 @@ import { IconCircleDashedCheck, IconCircleDashedX } from "@tabler/icons-react";
 
 import { Separator } from "@/components/ui/separator";
 
-import { formFieldColumn } from "@/components/common/data-table/form-field-column";
-import formData from "@/components/common/data-table/form.json";
+import formData from "../../../components/auth/form-fileds/form.json";
 import { ComboboxDemo } from "@/components/ui/ComboboxDemo";
+import { formFieldColumn } from "../../common/data-table/column/form-field-column";
+import { TitleWarning } from "@/components/common/tittle-warning";
 
 export function FormAndFieds() {
   const [open, setOpen] = useState(false);
@@ -27,21 +28,21 @@ export function FormAndFieds() {
     <>
       <div className="flex flex-1 flex-col">
         <div className="@container/main flex flex-1 flex-col gap-2">
-          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-            <div className="px-4 lg:px-6">
-              <DataTable2
-                data={formData}
-                columns={formFieldColumn}
-                addButtonType="drawer"
-                addButtonLabel="+ New Form"
-                addButtonPath="form-fields"
-                open={open}
-                setOpen={setOpen}
-              />
-            </div>
+          <TitleWarning title={"Form&Field"} warning={"Warning"} />
+          <div className="px-4 lg:px-6">
+            <DataTable
+              data={formData}
+              columns={formFieldColumn}
+              addButtonType="drawer"
+              addButtonLabel="+ New Form"
+              addButtonPath="form-fields"
+              open={open}
+              setOpen={setOpen}
+            />
           </div>
         </div>
       </div>
+
       <Drawer direction="right" open={open} onOpenChange={setOpen}>
         <DrawerContent>
           <DrawerHeader>
@@ -76,7 +77,7 @@ export function FormAndFieds() {
           <DrawerFooter>
             <div className="flex justify-end gap-3">
               <Button variant="outline">
-                <IconCircleDashedX className="text-red-500"  />
+                <IconCircleDashedX className="text-red-500" />
                 Cancel
               </Button>
               <Button type="submit">

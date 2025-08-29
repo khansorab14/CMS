@@ -1,7 +1,7 @@
-import { DataTable2 } from "@/components/common/data-table/data-table2";
+import { DataTable } from "@/components/common/data-table/data-table";
 
-import productType from "@/components/common/data-table/product-type.json";
-import { ProductTypeColumn } from "@/components/common/data-table/product-type-column";
+import productType from "@/components/auth/product/product-type.json";
+
 import {
   Drawer,
   DrawerContent,
@@ -9,40 +9,40 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { CustomDrawerContent } from "@/components/ui/custom-drawer-content";
+
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { IconCircleDashedCheck, IconCircleDashedX } from "@tabler/icons-react";
-import { useNavigate } from "react-router-dom";
-import { ComboboxDemo } from "@/components/ui/ComboboxDemo";
+// import { useNavigate } from "react-router-dom";
+
 import { Separator } from "@/components/ui/separator";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Info } from "lucide-react";
+import { ProductTypeColumn } from "../../common/data-table/column/product-type-column";
+import { TitleWarning } from "@/components/common/tittle-warning";
 
 export function ProductType() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
-      <div className="flex flex-1 flex-col">
+      <div>
         <div className="@container/main flex flex-1 flex-col gap-2">
-          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-            <div className="px-4 lg:px-6">
-              <DataTable2
-                data={productType}
-                columns={ProductTypeColumn}
-                addButtonType="drawer"
-                addButtonLabel="+ New Product Type"
-                addButtonPath="product-types"
-                open={open}
-                setOpen={setOpen}
-              />
-            </div>
+          <TitleWarning title={"Product Type"} warning={"Wasrning "} />
+          <div className="px-4 lg:px-6">
+            <DataTable
+              data={productType}
+              columns={ProductTypeColumn}
+              addButtonType="drawer"
+              addButtonLabel="+ New Product Type"
+              addButtonPath="product-types"
+              open={open}
+              setOpen={setOpen}
+            />
           </div>
         </div>
       </div>
+
       <Drawer direction="right" open={open} onOpenChange={setOpen}>
         <DrawerContent>
           <DrawerHeader>

@@ -13,6 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { TitleWarning } from "@/components/common/tittle-warning";
 
 export function AddFmr() {
   const navigate = useNavigate();
@@ -33,6 +35,14 @@ export function AddFmr() {
         </CardHeader>
 
         <Separator />
+        <div className="px-4 lg:px-6">
+          <TitleWarning
+            title={"FMR"}
+            warning={
+              "The Masterlist page provides a centralized view to manage andorganize all key configuration items across modules."
+            }
+          />
+        </div>
 
         <CardContent className="mt-6">
           <form className="flex flex-col gap-6 w-full">

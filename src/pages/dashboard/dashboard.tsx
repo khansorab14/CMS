@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { SiteHeader } from "@/components/site-header";
+import { SiteHeader } from "@/components/common/header/site-header";
 import { SidebarInset } from "@/components/ui/sidebar";
 import { ListChecks } from "lucide-react"; // Example icon
 
@@ -53,9 +53,7 @@ export default function Dashboard() {
     <SidebarInset>
       <SiteHeader tabs={activeTab} />
 
-      <div className="p-6">
-        <Outlet />
-      </div>
+      <Outlet />
     </SidebarInset>
   );
 }

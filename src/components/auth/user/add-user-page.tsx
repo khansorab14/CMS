@@ -22,6 +22,7 @@ import { UserInfo } from "./user-info";
 import { RoleInfo } from "../role/role-info";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircleIcon, Terminal } from "lucide-react";
+import { TitleWarning } from "@/components/common/tittle-warning";
 
 export function AddUserAndRolePage() {
   const navigate = useNavigate();
@@ -35,21 +36,13 @@ export function AddUserAndRolePage() {
       <Card className="w-full max-w-[1200px] shadow-lg">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="text-3xl">
-                {isUserPage ? "User" : "Role"}
-              </CardTitle>
+            <TitleWarning
+              title={"Role"}
+              warning={
+                "Mandatory fields are marked; complete the rest as fully as you can."
+              }
+            />
 
-              <CardDescription>
-                {isUserPage
-                  ? "Mandatory fields are marked; complete the rest as fully as you can."
-                  : "Create a new role with description and permissions."}
-              </CardDescription>
-              <Alert variant="destructive">
-                <AlertCircleIcon />
-                <AlertTitle>Unable to process your payment.</AlertTitle>
-              </Alert>
-            </div>
             <div className="flex gap-3">
               <Button variant="outline" onClick={() => navigate(-1)}>
                 Cancel

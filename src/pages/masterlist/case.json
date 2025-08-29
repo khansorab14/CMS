@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Open Case",
+    "description": "Case is newly created and pending review.",
+    "status": "Active"
+  },
+  {
+    "id": "2",
+    "name": "Under Review",
+    "description": "Case is currently being reviewed by the team.",
+    "status": "Active"
+  },
+  {
+    "id": "3",
+    "name": "Closed Case",
+    "description": "Case has been resolved and archived.",
+    "status": "Inactive"
+  },
+  {
+    "id": "4",
+    "name": "Escalated",
+    "description": "Case has been escalated for further action.",
+    "status": "Active"
+  }
+]
